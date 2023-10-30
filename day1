@@ -1,0 +1,11 @@
+/****** Day 1 ******/
+
+module 4:1_mux(out, sel, A, B);	
+	input [3:0]A
+	input [3:0]B
+	input sel
+	output out[3:0]
+	
+	assign out = sel ? B : A
+
+endmodule

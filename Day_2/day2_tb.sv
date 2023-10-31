@@ -9,8 +9,13 @@ module D_FF_tb;
 
 	D_FF d_ff_dut(.clk(clk), .d_in(d_in), .rst(rst), .q_non_rst(q_non_rst), .q_sncr_rst(q_sncr_rst), .q_asncr_rst(q_asncr_rst);
 
+	initial begin
+		$dumpfile("day2.vcd");
+		$dumpvars;
+	end
+
 	initial
-		$monitor("time = %d, clk = %b, d_in =%b, rst = %b, q_non_rst = %b, q_sncr_rst = %b, q_asncr_rst = %b", $time, clk, d_in, rst, q_non_rst, q_sncr_rst, q_asncr_rst);
+		$monitor("time = %d, clk = %b, d_in =%b, rst = %b, q_non_rst = %b, q_sncr_rst = %b, q_asncr_rst = %b", $time, clk, d_in, rst, q_non_rst, q_sncr_rst, q_asncr_rst));
 
 	initial begin
 		clk = 1'b0;

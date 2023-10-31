@@ -1,3 +1,0 @@
-
-module D_FF(q_non_rst, q_sncr_rst, q_asncr_rst, d, clk);
-	

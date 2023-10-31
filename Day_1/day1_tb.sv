@@ -1,4 +1,4 @@
-module mux_2:1_tb;
+module mux_2_1_tb;
 	reg [7:0] a, b;
 	reg sel;
 	wire [7:0]out;

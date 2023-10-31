@@ -7,7 +7,7 @@ module D_FF_tb;
 	wire q_sncr_rst;
 	wire q_asncr_rst;
 
-	D_FF d_ff_dut(.clk(clk), .d_in(d_in), .rst(rst), .q_non_rst(q_non_rst), .q_sncr_rst(q_sncr_rst), .q_asncr_rst(q_asncr_rst);
+	D_FF d_ff_dut(.clk(clk), .d_in(d_in), .rst(rst), .q_non_rst(q_non_rst), .q_sncr_rst(q_sncr_rst), .q_asncr_rst(q_asncr_rst));
 
 	initial begin
 		$dumpfile("day2.vcd");
@@ -15,7 +15,7 @@ module D_FF_tb;
 	end
 
 	initial
-		$monitor("time = %d, clk = %b, d_in =%b, rst = %b, q_non_rst = %b, q_sncr_rst = %b, q_asncr_rst = %b", $time, clk, d_in, rst, q_non_rst, q_sncr_rst, q_asncr_rst));
+		$monitor("time = %d, clk = %b, d_in =%b, rst = %b, q_non_rst = %b, q_sncr_rst = %b, q_asncr_rst = %b", $time, clk, d_in, rst, q_non_rst, q_sncr_rst, q_asncr_rst);
 
 	initial begin
 		clk = 1'b0;
@@ -30,7 +30,7 @@ module D_FF_tb;
 		#10 rst = 1'b1;
 		#10 rst = 1'b0;
 		#10 d_in = 1'b0;
-		#5 rst = 1'b1;
+		#10 rst = 1'b1;
 	       	d_in = 1'b1;
 		#10 rst = 1'b0;
 		#20 $finish;

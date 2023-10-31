@@ -1,7 +1,7 @@
 // Day 1
 // a simple mux
 
-module 2_1_mux(out, sel, a, b);
+module mux2_1(out, sel, a, b);
 	input [7:0] a,b;
 	input sel;
 	output [7:0] out;

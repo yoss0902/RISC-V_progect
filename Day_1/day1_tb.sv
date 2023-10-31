@@ -6,7 +6,7 @@ module mux2_1_tb;
 	mux2_1 mux_dut(.a(a), .b(b), .sel(sel), .out(out));
 
 	initial 
-		$monitor("time = %d, a = %b, b = %b, sel = %b, out = %b", $time a, b, sel, out);
+		$monitor("time = %d, a = %b, b = %b, sel = %b, out = %b", $time, a, b, sel, out);
 		
 	initial begin
 		repeat(10) begin

@@ -19,7 +19,7 @@ module edge_dect(fall_edge, rise_edge, clk, rst, d_in);
 	assign rise_edge = ~q & d_in;
 
 	//negative edge detector
-	assign neg_edge = q & ~d_in;
+	assign fall_edge = q & ~d_in;
 
 endmodule
 

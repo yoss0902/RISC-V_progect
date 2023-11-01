@@ -13,6 +13,7 @@ module edge_dect_tb;
 	initial begin
 		$dumpfile("Day_3.vcd");
 		$dumpvars;
+	end
 
 	initial
 		$monitor("time =%d, clk = %b, rst = %b, d_in = %b, rise_edge = %b, fall_edge = %b", $time, clk, rst, d_in, rise_edge, fall_edge);

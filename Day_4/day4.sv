@@ -12,7 +12,7 @@ module ALU(alu_out, a, b, op_code);
 		AND = 3'b100,
 		OR = 3'b101,
 		XOR = 3'b110,
-		EQL = 3'b11;
+		EQL = 3'b111;
 	
 	reg carry;
 

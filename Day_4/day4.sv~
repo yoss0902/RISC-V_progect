@@ -1,0 +1,29 @@
+module 8bit_ALU(alu_out, a, b, op_code);
+	
+	input [7:0]a, b;
+	input [2:0]op_code;
+
+	output [8:0]alu_out;
+
+	parameter ADD = 3'b000,
+		SUB = 3'b001,
+		SLL = 3'b010,
+		SRL = 3'b011,
+		AND = 3'b100,
+		OR = 3'b101,
+		XOR = 3'b110,
+		EQL = 3'b11;
+	
+	reg carry;
+
+
+	always@(.*) begin
+		case(op_code)
+			ADD: alu_out = {carry, a+b};
+			
+		       	
+
+
+
+
+

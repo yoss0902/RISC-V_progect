@@ -1,4 +1,4 @@
-module 8bit_ALU(alu_out, a, b, op_code);
+module ALU(alu_out, a, b, op_code);
 	
 	input [7:0]a, b;
 	input [2:0]op_code;
@@ -17,7 +17,7 @@ module 8bit_ALU(alu_out, a, b, op_code);
 	reg carry;
 
 
-	always@(.*) begin
+	always@(*) begin
 		case(op_code)
 			ADD: {carry, alu_out} = a+b;
 			SUB: alu_out = a - b;

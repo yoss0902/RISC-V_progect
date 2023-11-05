@@ -5,7 +5,7 @@ module odd_cntr(cntr_out, clk, rst);
 	input clk;
 	input rst;
 
-	output reg [7:0]cntr_out
+	output reg [7:0]cntr_out;
 
 	always@(posedge clk or posedge rst)
 		if (rst | cntr_out == 8'hff)

@@ -3,7 +3,7 @@ module 8bit_ALU(alu_out, a, b, op_code);
 	input [7:0]a, b;
 	input [2:0]op_code;
 
-	output [8:0]alu_out;
+	output reg [7:0]alu_out;
 
 	parameter ADD = 3'b000,
 		SUB = 3'b001,
@@ -19,7 +19,7 @@ module 8bit_ALU(alu_out, a, b, op_code);
 
 	always@(.*) begin
 		case(op_code)
-			ADD: alu_out = {carry, a+b};
+			ADD: {carry, alu_out} = a+b;
 			SUB: alu_out = a - b;
 			SLL: alu_out = a << 1;
 			SRL: alu_out = a >> 1;

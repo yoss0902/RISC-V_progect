@@ -30,4 +30,4 @@ module shift_register_tb;
 		$finish;
 	end
 
-endmosule
+endmodule

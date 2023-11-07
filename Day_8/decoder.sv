@@ -7,6 +7,6 @@ module decoder(out, in);
 
 	output [one_hot_out-1:0]out;
 
-	assign out = {(one_hot_out - 1 - (in))'b0, 1'b1, (in)'b0};
+	assign out = 1'b1 << in;
 
-endmodulei
+endmodule

@@ -14,7 +14,7 @@ module lfsr_tb;
 
 	end
 
-	initial 
+	initial begin
 		clk = 1'b0;
 		#10 rst = 1'b1;
 		#10 rst = 1'b0;

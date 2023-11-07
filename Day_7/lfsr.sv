@@ -1,4 +1,4 @@
-module lfsr(lfsr_out, vlk, rst);
+module lfsr(lfsr_out, clk, rst);
 	
 	input clk;
 	input rst;

@@ -17,7 +17,7 @@ module cntr_with_input_tb;
 
 	initial begin
 		clk = 1'b0;
-		rst = 1'b0;
+		rst = 1'b1;
 		ld_in = 1'b0;
 		ld_val = 4'b0;
 	end
@@ -25,11 +25,12 @@ module cntr_with_input_tb;
 	always #5 clk = ~clk;
 
 	initial begin
+		#10 rst = 1'b0
+		#50 ld_in = 1'b1;
+		ld_val = 4'hc;
+		#10 ld_in = 1'b0;
 		#50 rst = 1'b1;
 		#10 rst = 1'b0;
-		#10 ld_in = 1'b1;
-		ld_val = 4'hc;
-		#50 rst = 1'b0;
 		#170 $finish;
 	end
 endmodule

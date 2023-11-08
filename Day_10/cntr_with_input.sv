@@ -6,7 +6,7 @@ module cntr_with_input(count_out, clk, rst, ld_in, ld_val);
 	input [3:0]ld_val;
 
 	output reg [3:0]count_out;
-	wire [3:0]temp;
+	reg [3:0]temp;
 
 	always@(posedge clk or posedge rst)
 		if (rst) begin	

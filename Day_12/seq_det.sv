@@ -15,6 +15,6 @@ module seq_det(det_out, clk, rst, ser_in);
 			temp = 12'h0;
 		else
 			temp <= {ser_in, temp[11:1]};
-		end
+		
 	assign det_out = (temp == 12'hedb) ? 1'h1:1'h0;
 endmodule

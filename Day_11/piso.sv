@@ -16,11 +16,11 @@ module piso(srl_o, vld_o, clk, rst, prl_in);
 			num <= 1'h0;
 			vld_o <= 1'h0;
 		end
-		else if (num == 3'h4) begin // if the all data was given out
+		else if ((num == 3'h4)|(num == 3'h0)) begin // if the all data was given out
 			data <= prl_in; // data gets the next value
-			srl_o <= data[0];
+			srl_o <= data[1];
 			num <= 1'h0; //initalize the counter
-			vld_o <= 1'h0;
+			vld_o <= 1'h1;
 		end
 		else begin
 			srl_o <= data[0];

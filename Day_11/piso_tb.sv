@@ -16,18 +16,17 @@ module piso_tb;
 	
 	initial begin
 		clk = 1'h0;
-		rst = 1'h0;
-		prl_in = 4'h0;
+		rst = 1'h1;
+		prl_in = 4'h8;
 	end
 
 	always #5 clk = ~clk;
 
 	initial
-		#10 prl_in = 4'ha;
-		#50 rst = 1'h1;
 		#10 rst = 1'h0;
-		#10 prl_in = 4'hc;
-		#40;
+		repeat(10)
+			#40 prl_in = $urandom_range(1'h0, 4'hf);
+		$finish;
 	end
 endmodule
 

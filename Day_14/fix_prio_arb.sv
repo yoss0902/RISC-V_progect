@@ -4,14 +4,17 @@ module fix_prio_arb(gran_out, req_in);
 
 	input [PORTS_NUM-1:0]req_in;
 	output reg [PORTS_NUM-1:0]gran_out;
-
+	reg [PORTS_NUM-1:0]temp;
 	
-	genvar i;
-	for (i = PORTS_NUM - 1, i > 0  i = i-1)
-		if (req_in[i])
-			gran_out = 4'h0;
-			gran_out[i] = 1'h1;
-			i = 0;
+	integer i;
+	always@(*) begin
+		for (i = PORTS_NUM - 1, i > 0  i = i-1)
+			if (temp[i]) begin
+				gran_out = 4'h0;
+				gran_out[i] = 1'h1;
+				temp = 0;
+			end
+	end
 endmodule
 
 

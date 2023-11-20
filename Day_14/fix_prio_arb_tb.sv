@@ -1,9 +1,9 @@
 module fix_prio_arb_tb;
 
 	parameter PORTS_NUM = 4;
-	reg req_in;
+	reg  [PORTS_NUM-1:0]req_in;
 
-	wire gran_out;
+	wire [PORTS_NUM-1:0]gran_out;
 
 	fix_prio_arb #(PORTS_NUM) fix_prio_num(.*);
 	
@@ -14,7 +14,7 @@ module fix_prio_arb_tb;
 
 	initial 
 		repeat(20) begin
-			req_in = $urandom_range(0, 4'hf);
-			#10;
+			#10 req_in = $urandom_range(0, 4'hf);
+			
 		end
 endmodule

@@ -30,7 +30,7 @@ module seq_det_tb;
 		#10 ser_in = 1'h1;
 		#40;
 		repeat(1000)
-			#10 ser in = $random%2;
+			#10 ser_in = $random%2;
 		$finish;
 	end
 endmodule

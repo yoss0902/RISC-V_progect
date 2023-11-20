@@ -21,5 +21,5 @@ module mux_diff_cons_tb;
 		       	sel = $random%2;
 			#10;
 		end
-		$finish;
+		
 endmodule	

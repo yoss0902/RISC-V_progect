@@ -4,8 +4,8 @@ module mux_diff_cons(ter_out, case_out, ifelse_out, aor_out, sel, in);
 	input [1:0]sel;
 
 	output ter_out;
-	output case_out;
-	output ifelse_out;
+	output reg case_out;
+	output reg ifelse_out;
 	output aor_out;
 	
 	assign ter_out = sel[0] ? (sel[1] ? in[3] : in[1]) :

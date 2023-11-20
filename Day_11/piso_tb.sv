@@ -4,8 +4,8 @@ module piso_tb;
 	reg rst;
 	reg [3:0]prl_in;
 
-	output vld_o;
-	output srl_o;
+	wire vld_o;
+	wire srl_o;
 
 	piso piso_dut(.*);
 
@@ -22,7 +22,7 @@ module piso_tb;
 
 	always #5 clk = ~clk;
 
-	initial
+	initial begin
 		#10 rst = 1'h0;
 		repeat(10)
 			#40 prl_in = $urandom_range(1'h0, 4'hf);

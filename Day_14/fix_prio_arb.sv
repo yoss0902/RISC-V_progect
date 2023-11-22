@@ -9,7 +9,7 @@ module fix_prio_arb(gran_out, req_in);
 	integer i;
 	always@(*) begin
 		temp = req_in;
-		for (i = 0; i < PORTS_NUM - 1;  i = i+1)
+		for (i = 0; i < PORTS_NUM ;  i = i+1)
 			if (temp[i]) begin
 				gran_out = 4'h0;
 				gran_out[i] = 1'h1;

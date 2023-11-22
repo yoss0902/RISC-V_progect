@@ -4,28 +4,33 @@ module rnd_rbn_arb(gnt_out, clk, rst, req_in);
 	input rst;
 	input [3:0]req_in;
 
-	output [3:0]gnt_out;
-	wire [2:0]counter;
+	output reg [3:0]gnt_out;
+	reg [3:0]temp;
+	reg [3:0]mask;
+	reg [3:0]gnt_fix;
+	reg [3:0]gnt_rnd;
+	
+
 
 	always@(posedge clk or posedge rst)
-		if (rst | counter == 2'h4) begin
-			gnt_out = 4'h0;
-			counter = 3'h0;
-		end
-		else begin
-			counter = counter + 1
-		end
+		if (rst)
+			mask = 4'hf;
+		else if (gnt_out[0])
+			mask <= 4'b1110;
+		else if (gnt_out[1])
+			mask <= 4'b1100;
+		else if (gnt_out[2])
+			mask <= 4'b1000;
+		else if (gnt_out[3])
+			mask <= 4'hf;
+	
+	
+	assign temp = req_in & mask;
 
-	always@(*)
-		if (req_in[counter]) begin
-			gnt_out = 4'h0;
-			gnt_out[counter] = 1'h1;
-		end
-		else if (counter == 2'h4)
-			counter = 3'h0;
-		else
-			counter = counter +1;
+	fix_prio_arb f1(.req_in(req_in), .gran_out(gnt_fix));
+	fix_prio_arb f2(.req_in(temp), .gran_out(gnt_rnd));
 
+	assign gnt_out = &mask ? gnt_fix:gnt_rnd;
 
 
 	

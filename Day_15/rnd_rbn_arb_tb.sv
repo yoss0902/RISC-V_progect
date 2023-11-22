@@ -25,5 +25,6 @@ module rnd_rbn_arb_tb;
 		#10 rst = 1'h0;
 		repeat(100)
 			#20 req_in = $urandom_range(0, 4'hff);
+		$finish;
 	end
 endmodule

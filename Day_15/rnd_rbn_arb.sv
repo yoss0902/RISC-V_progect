@@ -1,6 +1,6 @@
 module rnd_rbn_arb(gnt_out, clk, rst, req_in);
 	
-	parameter PORTS_NUM = 4
+	parameter PORTS_NUM = 4;
 	input clk;
 	input rst;
 	input [3:0]req_in;

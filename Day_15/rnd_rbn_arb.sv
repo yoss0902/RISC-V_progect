@@ -1,5 +1,6 @@
 module rnd_rbn_arb(gnt_out, clk, rst, req_in);
-
+	
+	parameter PORTS_NUM = 4
 	input clk;
 	input rst;
 	input [3:0]req_in;
@@ -27,8 +28,8 @@ module rnd_rbn_arb(gnt_out, clk, rst, req_in);
 	
 	assign temp = req_in & mask;
 
-	fix_prio_arb f1(.req_in(req_in), .gran_out(gnt_fix));
-	fix_prio_arb f2(.req_in(temp), .gran_out(gnt_rnd));
+	fix_prio_arb #(PORTS_NUM) f1(.req_in(req_in), .gran_out(gnt_fix));
+	fix_prio_arb #(PORTS_NUM) f2(.req_in(temp), .gran_out(gnt_rnd));
 
 	assign gnt_out = &mask ? gnt_fix:gnt_rnd;
 

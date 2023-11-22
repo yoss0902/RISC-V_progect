@@ -19,11 +19,11 @@ module rnd_rbn_arb_tb;
 		req_in = 4'h0;
 	end
 
-	always #5 clk = ~clk;
+	always #10 clk = ~clk;
 
 	initial begin
 		#10 rst = 1'h0;
-		repeat(20)
-			#10 req_in = $urandom_range(0, 4'hff);
+		repeat(100)
+			#20 req_in = $urandom_range(0, 4'hff);
 	end
 endmodule

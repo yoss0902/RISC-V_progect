@@ -1,3 +1,4 @@
+
 //implementing basic APB master interface which add 1 to the read data value 
 // and write this value to the write data register
 
@@ -22,7 +23,7 @@ module apb_mst(psel,
 	output penable;
 	output [31:0]paddr;
 	output pwrite; //1 for write, 0 for read;
-	output pwdata;
+  	output [31:0]pwdata;
 	
 	
 	//3 states of the FSM
@@ -55,30 +56,25 @@ module apb_mst(psel,
 			ACCESS: begin
 				if (~pready)
 					nxt_state = ACCESS;
-				else if (pready&(|cmd))
-					nxt_state = SETUP;
-				else 
+				else if (pready)
+
 					nxt_state = IDLE;
 			end
 			default: nxt_state = curr_state;
 		endcase
 	end
 
-	assign pwdata = cmd[1]; //0 if cmd = 01 and 1 if cmd = 10
-	assign penable = (curr_state == ACCESS);
-	assign psel = penable | (curr_state == SETUP);
+	assign pwrite = cmd[1]; //0 if cmd = 01 and 1 if cmd = 10
+  	assign penable = (curr_state == ACCESS)?1:0;
+  	assign psel = (curr_state == ACCESS | (curr_state == SETUP))?1:0;
 	assign paddr = 32'hdeadcafe;
 	assign pwdata = read_data + 1'b1;
 	
 
 	always@(posedge clk or negedge rst)
 		if (!rst)
-			read_data = 32'b0;
+			read_data <= 32'b0;
 		else 
-			read_data = prdata;
+			read_data <= prdata;
 
 endmodule
-
-
-
-

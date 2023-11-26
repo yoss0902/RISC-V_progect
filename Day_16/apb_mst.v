@@ -19,8 +19,8 @@ module apb_mst(psel,
 	input [31:0]prdata; //input from slave
 	
 	output psel; 
-	output peneble;
-	output [31:0]padrr;
+	output penable;
+	output [31:0]paddr;
 	output pwrite; //1 for write, 0 for read;
 	output pwdata;
 	
@@ -42,7 +42,7 @@ module apb_mst(psel,
 			curr_state <= nxt_state;
 	
 	// actual logic os the FSM
-	always(*) begin
+	always@(*) begin
 		nxt_state = curr_state;
 		case(curr_state)
 			IDLE: begin
@@ -67,7 +67,7 @@ module apb_mst(psel,
 	assign pwdata = cmd[1]; //0 if cmd = 01 and 1 if cmd = 10
 	assign penable = (curr_state == ACCESS);
 	assign psel = penable | (curr_state == SETUP);
-	assign padrr = 32'hdeadcafe;
+	assign paddr = 32'hdeadcafe;
 	assign pwdata = read_data + 1'b1;
 	
 

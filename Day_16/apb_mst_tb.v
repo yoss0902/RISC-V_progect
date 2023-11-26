@@ -12,9 +12,14 @@ module apb_mst_tb;
 	wire pwrite;
 	wire pwdata;
 
-	wire [2:0]tmp;
+	reg [2:0]tmp;
 
 	apb_mst apb_mst_dut(.*);
+
+	initial begin 
+		$dumpfile("day16.vcd");
+		$dumpvars;
+	end
 
 	initial begin
 		clk = 1'b0;
@@ -34,11 +39,11 @@ module apb_mst_tb;
 		end
 	initial 
 		repeat(10) begin
-			prdata = $urandom_range(0, 4'hff);
+			prdata = $urandom_range(0, 4'hf);
 			cmd = $random%2 + 1;
 			while(~pready)
 				#10;
-		$finish
+		$finish;
 		end
 
 

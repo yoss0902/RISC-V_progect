@@ -1,13 +1,19 @@
 // Day 2
 // various kinds of D flip-flop
 
-module D_FF(q_non_rst, q_sncr_rst, q_asncr_rst, d_in, clk, rst);
+module d_ff(q_non_rst,
+       		q_sncr_rst,
+	       	q_asncr_rst,
+	       	d_in,
+	       	clk,
+	       	rst);
 
-	input d_in;
+	input d_in; 
 	input clk;
 	input rst;
-	output reg q_non_rst;
-	output reg q_sncr_rst;
+
+	output reg q_non_rst; 
+	output reg q_sncr_rst; 
 	output reg q_asncr_rst;
 
 	// no reset

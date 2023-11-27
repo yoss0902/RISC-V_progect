@@ -31,11 +31,12 @@ module d_ff_tb;
 
 	//the simulation
 	initial begin
+		#10 d_in = 1'b1;
 		#10 rst = 1'b1;
 		#10 rst = 1'b0;
-		repeat(10)
-			#10 d_in = $random_range%2;
-		$finish
+		#10 d_in = 1'b0;
+		#10 d_in = 1'b1;
+		#20 $finish;
 
 	end
 endmodule

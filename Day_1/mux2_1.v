@@ -12,7 +12,7 @@ module mux2_1(out,
 	output [7:0] out;
 	
 	// out will be determined according to select wire
-	// is sel is 1, out will be b, otherwise a.
+	// if sel is 1, out will be b, otherwise a.
 	assign out = sel ? b : a;
 
 endmodule

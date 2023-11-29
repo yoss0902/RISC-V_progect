@@ -4,9 +4,11 @@ module ALU_tb;
 	reg cout;
 	reg [2:0]op_code;
 	wire [7:0]alu_out;
-
+	
+	//intantiation of the alu
 	ALU ALU_dut(.a(a), .b(b), .op_code(op_code), .alu_out(alu_out));
 
+	//creating the waves file and determine the simulation length
 	initial begin
 		$dumpfile("day4.vcd");
 		$dumpvars;
@@ -14,6 +16,7 @@ module ALU_tb;
 		$finish;
 	end
 	
+	//the simulation
 	initial begin
 		repeat(3) begin
 			for (int i = 0; i<8; i++) begin

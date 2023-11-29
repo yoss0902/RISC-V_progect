@@ -1,9 +1,13 @@
-In this project I'm attempting to write a RTL code using Verilog for a RISC-V
+In this project I am attempting to write a RTL code using Verilog to create a RISC-V
 Single cycle proccessor.
 
-The project consist of 100 Days, such as every day consist of one digital
-component or stracture. in the construction of the advanced components and structures, the
-previous component are been used.
+The project is consist of 100 parts. each part consist of one digital
+component or structure. In the proccess of creating the advenced and more
+complex compenents, I make use of the previous components.  
 
-The project was made with the help and the insperation of Rahul Behl which was the first to
-do it and my thanks are given to him.    
+For simulation and synthesis, I am using "EDA playground".
+
+In the proccess of creating this project so far, I have recieved help and insperation from Rahul Behl
+who created his own project of this sort, and i'd like to thank him.
+
+    

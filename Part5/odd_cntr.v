@@ -1,3 +1,4 @@
+//Part 5
 //8 bit odd counter
 
 module odd_cntr(cntr_out, clk, rst);

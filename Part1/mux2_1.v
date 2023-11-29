@@ -1,4 +1,4 @@
-// Day 1
+// Part 1
 // a simple mux
 
 module mux2_1(out,

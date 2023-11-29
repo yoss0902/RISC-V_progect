@@ -1,4 +1,11 @@
-module edge_dect(fall_edge, rise_edge, clk, rst, d_in);
+// part 3 
+//a rising edge and a falling edge detector
+
+module edge_dect(fall_edge,
+       		rise_edge,
+	       	clk,
+	       	rst,
+	       	d_in);
 	
 	input clk;
 	input rst;
@@ -15,7 +22,7 @@ module edge_dect(fall_edge, rise_edge, clk, rst, d_in);
 		else
 			q <= d_in;
 
-	// positive edge detector
+	//positive edge detector
 	assign rise_edge = ~q & d_in;
 
 	//negative edge detector

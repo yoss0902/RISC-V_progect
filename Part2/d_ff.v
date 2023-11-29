@@ -1,5 +1,5 @@
 // Day 2
-// various kinds of D flip-flop
+// various kinds of D-ff
 
 module d_ff(q_non_rst,
        		q_sncr_rst,

@@ -1,7 +1,7 @@
 In this project I am attempting to write a RTL code using Verilog to create a RISC-V
 Single cycle proccessor.
 
-The project is consist of 100 parts. each part consist of one digital
+The project consists of 100 parts. each part consists of one digital
 component or structure. In the proccess of creating the advenced and more
 complex compenents, I make use of the previous components.  
 

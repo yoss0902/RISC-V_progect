@@ -15,8 +15,8 @@ module mux2_1_tb;
 	initial begin
 		repeat(10) begin
 			#5;
-			a = $urandom_range(0, 8'd255);
-			b = $urandom_range(0, 8'd255);
+			a = $random % 8'd255;
+			b = $random % 8'd255;
 			sel = $random%2;
 		end
 	end
